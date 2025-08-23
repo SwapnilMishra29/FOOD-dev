@@ -1,13 +1,25 @@
 import React from 'react'
 import "./cart.css"
-import { useContext } from 'react';
+import { useContext,useState } from 'react';
 import { StoreContext } from '../../Context/StoreContext';
 import { useNavigate } from 'react-router-dom';
+import LoginPopUp from '../../components/LoginPopUp/LoginPopUp'
 
 const Cart = () => {
 
-  const {cartItems, food_list, removeFromCart, getTotalCartAmount,url} = useContext(StoreContext);
+  const {cartItems, food_list, removeFromCart, getTotalCartAmount,url,token} = useContext(StoreContext);
+  const [showLogin, setShowLogin] = useState(false);
   const navigate = useNavigate();
+
+  if (!token) {
+    return (
+      <div className="cart-login-message">
+        <h2>Please login to access your cart</h2>
+        <button onClick={() => setShowLogin(true)}>Login</button>
+        {showLogin && <LoginPopUp setShowLogin={setShowLogin} />}
+      </div>
+    );
+  }
 
   return (
     <div>

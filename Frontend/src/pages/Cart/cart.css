@@ -102,6 +102,24 @@
     border-radius: 4px;
 }
 
+.cart-login-message {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.cart-login-message h2 {
+  color: #444;
+}
+
+.cart-login-message button {
+  padding: 10px 20px;
+  background: #ff4c24;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 @media (max-width:750px) {
     .cart-bottom {
         flex-direction: column-reverse;
