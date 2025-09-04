@@ -1,0 +1,26 @@
+/* Skeleton container */
+.food-skeletons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+/* Individual skeleton card */
+.skeleton-card {
+  height: 250px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ececec 25%, #f7f7f7 50%, #ececec 75%);
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+/* Animation effect */
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
