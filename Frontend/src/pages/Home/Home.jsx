@@ -14,15 +14,6 @@ const FoodDisplay = React.lazy(()=>
 
  
 // Skeleton loader component
-const FoodSkeleton = () => {
-  return (
-    <div className="food-skeletons">
-      {[...Array(6)].map((_, i) => (
-        <div key={i} className="skeleton-card"></div>
-      ))}
-    </div>
-  )
-}
 
 
 const Home = () => {
@@ -37,8 +28,9 @@ const Home = () => {
       <ExploreMenu category={category} setCategory={setCategory}/>
 
        {/* Wrap FoodDisplay inside Suspense */}
-      <Suspense fallback={<FoodSkeleton/>}>
-           <FoodDisplay category={category}/>
+     {/* Wrap FoodDisplay inside Suspense */}
+      <Suspense fallback={<p>Loading foods....</p>}>
+        <FoodDisplay category={category} />
       </Suspense>
      
       <AppDownload />
