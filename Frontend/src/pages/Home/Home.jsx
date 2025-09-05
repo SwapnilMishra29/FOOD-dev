@@ -7,16 +7,18 @@ import { useState } from 'react'
 import AppDownload from '../../components/AppDownload/appDownload'
 
 
-// Lazy load FoodDisplay
-const FoodDisplay = React.lazy(()=>
-    import('../../components/FoodDisplay/FoodDisplay')
-  )
 
  
 // Skeleton loader component
 
 
 const Home = () => {
+
+    // Lazy load FoodDisplay
+const FoodDisplay = React.lazy(()=>
+    import('../../components/FoodDisplay/FoodDisplay')
+  )
+
 
   
     
