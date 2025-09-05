@@ -7,6 +7,24 @@ const FoodDisplay = ({category}) => {
 
   const {food_list} = useContext(StoreContext)
 
+    // if food_list is not loaded yet, show loader
+  if (!food_list || food_list.length === 0) {
+    return (
+      <div className="food-display" id="food-display">
+        <h2>Top dishes near you</h2>
+        <div className="food-display-list">
+          {/* show skeletons or spinner */}
+          <div className="skeleton-card"></div>
+          <div className="skeleton-card"></div>
+          <div className="skeleton-card"></div>
+          <div className="skeleton-card"></div>
+          <div className="skeleton-card"></div>
+        </div>
+      </div>
+    )
+  }
+
+
   return (
     <div className='food-display' id='food-display'>
         <h2>Top dishes near you</h2>
