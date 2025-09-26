@@ -11,7 +11,7 @@ import orderRouter from "./routes/orderRoute.js"
 
 
 //app config
-const app = express()
+const app = express({origin:"https://food-del-frontend-60wy.onrender.com",credentials:true})
 const port = process.env.PORT || 4000;
 
 // middleware
