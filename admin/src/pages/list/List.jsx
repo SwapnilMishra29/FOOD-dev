@@ -2,7 +2,9 @@ import React from 'react'
 import './list.css'
 import axios from "axios"
 import { useState, useEffect } from 'react'
-import {toast} from "react-toastify"
+import {toast} from "react-toastify"https:
+
+const url = "https://food-del-backend-nvvo.onrender.com";
 
 const List = ({url}) => {
   const [list,setList] = useState([]);
