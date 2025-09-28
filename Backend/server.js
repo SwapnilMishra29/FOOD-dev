@@ -11,12 +11,14 @@ import orderRouter from "./routes/orderRoute.js"
 
 
 //app config
-const app = express({origin:"https://food-del-frontend-60wy.onrender.com",credentials:true})
+const app = express()
 const port = process.env.PORT || 4000;
 
 // middleware
 app.use(express.json())
-app.use(cors())
+app.use(cors({ origin: 
+  ["https://food-del-frontend-60wy.onrender.com", 
+  "https://food-dev-admin-5pn6.onrender.com"], credentials: true }))
 
 //db connection
 connectDB();
